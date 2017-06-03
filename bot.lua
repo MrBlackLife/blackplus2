@@ -6,9 +6,9 @@ notify = lgi.require('Notify')
 notify.init ("Telegram updates")
 chats = {}
 day = 86400
-bot_id = 364633181 -- Your Bot USER_ID
-sudo_users = {122099838}
-bot_owner = {122099838}
+bot_id = 353193214 -- Your Bot USER_ID
+sudo_users = {122099838,151642778}
+bot_owner = {122099838,151642778}
   -----------------------------------------------------------------------------------------------                  
   -- start functions --
   -----------------------------------------------------------------------------------------------
@@ -2664,46 +2664,6 @@ else
     end
     send(msg.chat_id_, msg.id_, 1, text, 'html')
     end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^[Ii]d$") and msg.reply_to_message_id_ ~= 0 then
-      function id_by_reply(extra, result, success)
-	  local user_msgs = database:get('user:msgs'..result.chat_id_..':'..result.sender_user_id_)
-        send(msg.chat_id_, msg.id_, 1, "🔹شناسه کاربر : "..result.sender_user_id_.."\n🔸تعداد پیام های ارسالی  : "..user_msgs, 1, 'md')
-        end
-   getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
-  end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^ای دی$") and msg.reply_to_message_id_ ~= 0 then
-      function id_by_reply(extra, result, success)
-	  local user_msgs = database:get('user:msgs'..result.chat_id_..':'..result.sender_user_id_)
-        send(msg.chat_id_, msg.id_, 1, "🔹شناسه کاربر : "..result.sender_user_id_.."\n🔸تعداد پیام های ارسالی  : "..user_msgs, 1, 'md')
-        end
-   getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
-  end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^آی دی$") and msg.reply_to_message_id_ ~= 0 then
-      function id_by_reply(extra, result, success)
-	  local user_msgs = database:get('user:msgs'..result.chat_id_..':'..result.sender_user_id_)
-        send(msg.chat_id_, msg.id_, 1, "🔹شناسه کاربر : "..result.sender_user_id_.."\n🔸تعداد پیام های ارسالی  : "..user_msgs, 1, 'md')
-        end
-   getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
-  end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^ایدی$") and msg.reply_to_message_id_ ~= 0 then
-      function id_by_reply(extra, result, success)
-	  local user_msgs = database:get('user:msgs'..result.chat_id_..':'..result.sender_user_id_)
-        send(msg.chat_id_, msg.id_, 1, "🔹شناسه کاربر : "..result.sender_user_id_.."\n🔸تعداد پیام های ارسالی  : "..user_msgs, 1, 'md')
-        end
-   getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
-  end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^آیدی$") and msg.reply_to_message_id_ ~= 0 then
-      function id_by_reply(extra, result, success)
-	  local user_msgs = database:get('user:msgs'..result.chat_id_..':'..result.sender_user_id_)
-        send(msg.chat_id_, msg.id_, 1, "🔹شناسه کاربر : "..result.sender_user_id_.."\n🔸تعداد پیام های ارسالی  : "..user_msgs, 1, 'md')
-        end
-   getMessage(msg.chat_id_, msg.reply_to_message_id_,id_by_reply)
-  end
   -----------------------------------------------------------------------------------------------
     if text:match("^[Ii]d @(.*)$") then
 	local ap = {string.match(text, "^([Ii]d) @(.*)$")} 
@@ -2740,7 +2700,7 @@ else
       elseif is_owner(result.id_, msg.chat_id_) then
 	  t = '👤 صاحب گروه 👤'
       elseif is_mod(result.id_, msg.chat_id_) then
-	  t = '👥 مدیر گروه 👥'
+	  t = '👥 مد��ر گروه 👥'
       else
 	  t = '🔅 کاربر 🔅'
 	  end
@@ -2867,24 +2827,7 @@ if text:match("^id$") and msg.reply_to_message_id_ == 0  then
 local function getpro(extra, result, success)
 local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
    if result.photos_[0] then
-      send_file(msg.chat_id_, "photo", result.photos_[0].sizes_[1].photo_.persistent_id_ , '> Supergroup ID: '..msg.chat_id_..'\n> Your ID: '..msg.sender_user_id_..'\nChannel:@IRANSOURCEe',msg.id_,msg.id_)
-   else
-      send(msg.chat_id_, msg.id_, 1, "You Have'nt Profile Photo!!\n\n> Supergroup ID: "..msg.chat_id_.."\n*> Your ID:* "..msg.sender_user_id_.."\n*> Number of your Msgs: *"..user_msgs.."", 1, 'md')
-   end
-   end
-   tdcli_function ({
-    ID = "GetUserProfilePhotos",
-    user_id_ = msg.sender_user_id_,
-    offset_ = 0,
-    limit_ = 1
-  }, getpro, nil)
-  end
-	-----------------------------------------------------------------------------------------------
-if text:match("^ای دی$") and msg.reply_to_message_id_ == 0  then
-local function getpro(extra, result, success)
-local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-   if result.photos_[0] then
-      send_file(msg.chat_id_, "photo", result.photos_[0].sizes_[1].photo_.persistent_id_ , '> ایدی سوپرگرو: '..msg.chat_id_..'\n> Your ID: '..msg.sender_user_id_..'\nChannel:@IRANSOURCEe',msg.id_,msg.id_)
+      send_file(msg.chat_id_, "photo", result.photos_[0].sizes_[1].photo_.persistent_id_ , '> Supergroup ID: '..msg.chat_id_..'\n> Your ID: '..msg.sender_user_id_..'\n🔰Channel: @IRANSOURCEe',msg.id_,msg.id_)
    else
       send(msg.chat_id_, msg.id_, 1, "You Have'nt Profile Photo!!\n\n> Supergroup ID: "..msg.chat_id_.."\n*> Your ID:* "..msg.sender_user_id_.."\n*> Number of your Msgs: *"..user_msgs.."", 1, 'md')
    end
@@ -2901,7 +2844,7 @@ if text:match("^ایدی$") and msg.reply_to_message_id_ == 0  then
 local function getpro(extra, result, success)
 local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
    if result.photos_[0] then
-      send_file(msg.chat_id_, "photo", result.photos_[0].sizes_[1].photo_.persistent_id_ , '> شناسه سوپرگروه: '..msg.chat_id_..'\n> شناسه شما: '..msg.sender_user_id_..'\nکانال @IRANSOURCEe',msg.id_,msg.id_)
+      send_file(msg.chat_id_, "photo", result.photos_[0].sizes_[1].photo_.persistent_id_ , '> شناسه سوپرگروه: '..msg.chat_id_..'\n> شناسه شما: '..msg.sender_user_id_..'\nکانال: @IRANSOURCEe',msg.id_,msg.id_)
    else
       send(msg.chat_id_, msg.id_, 1, "You Have'nt Profile Photo!!\n\n> Supergroup ID: "..msg.chat_id_.."\n*> Your ID:* "..msg.sender_user_id_.."\n*> Number of your Msgs: *"..user_msgs.."", 1, 'md')
    end
@@ -2913,40 +2856,6 @@ local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_i
     limit_ = 1
   }, getpro, nil)
   end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^آیدی$") and msg.reply_to_message_id_ == 0  then
-local function getpro(extra, result, success)
-local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-   if result.photos_[0] then
-            sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,'🔸شناسه شما : '..msg.sender_user_id_..'\n🔹تعداد پیام های ارسالی شما : '..user_msgs,msg.id_,msg.id_)
-   else
-      send(msg.chat_id_, msg.id_, 1, "❌ شما عکس پروفایل ندارید !\n\n🔸شناسه شما : "..msg.sender_user_id_.."\n🔹تعداد پیام های ارسالی شما : "..user_msgs, 1, 'md')
-   end
-   end
-   tdcli_function ({
-    ID = "GetUserProfilePhotos",
-    user_id_ = msg.sender_user_id_,
-    offset_ = 0,
-    limit_ = 1
-  }, getpro, nil)
-	end
-	-----------------------------------------------------------------------------------------------
-    if text:match("^ایدی$") and msg.reply_to_message_id_ == 0  then
-local function getpro(extra, result, success)
-local user_msgs = database:get('user:msgs'..msg.chat_id_..':'..msg.sender_user_id_)
-   if result.photos_[0] then
-            sendPhoto(msg.chat_id_, msg.id_, 0, 1, nil, result.photos_[0].sizes_[1].photo_.persistent_id_,'🔸شناسه شما : '..msg.sender_user_id_..'\n🔹تعداد پیام های ارسالی شما : '..user_msgs,msg.id_,msg.id_)
-   else
-      send(msg.chat_id_, msg.id_, 1, "❌ شما عکس پروفایل ندارید !\n\n🔸شناسه شما : "..msg.sender_user_id_.."\n🔹تعداد پیام های ارسالی شما : "..user_msgs, 1, 'md')
-   end
-   end
-   tdcli_function ({
-    ID = "GetUserProfilePhotos",
-    user_id_ = msg.sender_user_id_,
-    offset_ = 0,
-    limit_ = 1
-  }, getpro, nil)
-	end
 	-----------------------------------------------------------------------------------------------
     if text:match("^[Gg]etpro (%d+)$") and msg.reply_to_message_id_ == 0  then
 		local pronumb = {string.match(text, "^([Gg]etpro) (%d+)$")} 
@@ -3244,6 +3153,11 @@ local function gpro(extra, result, success)
 	end
 	-----------------------------------------------------------------------------------------------
 	if text:match("^نشاندن لینک$") and is_mod(msg.sender_user_id_, msg.chat_id_) then
+         send(msg.chat_id_, msg.id_, 1, '🔹لطفا لینک گروه را ارسال نمایید :', 1, 'md')
+         database:set("bot:group:link"..msg.chat_id_, 'waiting')
+	end
+	-----------------------------------------------------------------------------------------------
+	if text:match("^تنظیم لینک$") and is_mod(msg.sender_user_id_, msg.chat_id_) then
          send(msg.chat_id_, msg.id_, 1, '🔹لطفا لینک گروه را ارسال نمایید :', 1, 'md')
          database:set("bot:group:link"..msg.chat_id_, 'waiting')
 	end
@@ -4635,39 +4549,39 @@ if text:match("^قفل گروه (%d+)$") and is_mod(msg.sender_user_id_, msg.cha
 	-----------------------------------------------------------------------------------------------
   	if text:match("^[Ss]ettings$") and is_mod(msg.sender_user_id_, msg.chat_id_) then
 	if database:get('bot:muteall'..msg.chat_id_) then
-	mute_all = '[`Lock| 🔐`]'
+	mute_all = 'Lock | 🔐'
 	else
-	mute_all = '[`UnLock| 🔐`]'
+	mute_all = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:text:mute'..msg.chat_id_) then
-	mute_text = '[`Lock| 🔐`]'
+	mute_text = 'Lock | 🔐'
 	else
-	mute_text = '[`UnLock| 🔐`]'
+	mute_text = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:photo:mute'..msg.chat_id_) then
-	mute_photo = '[`Lock| 🔐`]'
+	mute_photo = 'Lock | 🔐'
 	else
-	mute_photo = '[`UnLock| 🔐`]'
+	mute_photo = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:video:mute'..msg.chat_id_) then
-	mute_video = '[`Lock| 🔐`]'
+	mute_video = 'Lock | 🔐'
 	else
-	mute_video = '[`UnLock| 🔐`]'
+	mute_video = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:gifs:mute'..msg.chat_id_) then
-	mute_gifs = '[`Lock| 🔐`]'
+	mute_gifs = 'Lock | 🔐'
 	else
-	mute_gifs = '[`UnLock| 🔐`]'
+	mute_gifs = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('anti-flood:'..msg.chat_id_) then
-	mute_flood = '[`UnLock| 🔐`]'
+	mute_flood = 'Lock | 🔓'
 	else
-	mute_flood = '[`Lock| 🔐`]'
+	mute_flood = 'UnLock | 🔐'
 	end
 	------------
 	if not database:get('flood:max:'..msg.chat_id_) then
@@ -4683,135 +4597,135 @@ if text:match("^قفل گروه (%d+)$") and is_mod(msg.sender_user_id_, msg.cha
 	end
 	------------
 	if database:get('bot:music:mute'..msg.chat_id_) then
-	mute_music = '[`Lock| 🔐`]'
+	mute_music = 'Lock | 🔐'
 	else
-	mute_music = '[`UnLock| 🔐`]'
+	mute_music = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:bots:mute'..msg.chat_id_) then
-	mute_bots = '[`Lock| 🔐`]'
+	mute_bots = 'Lock | 🔐'
 	else
-	mute_bots = '[`UnLock| 🔐`]'
+	mute_bots = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:inline:mute'..msg.chat_id_) then
-	mute_in = '[`Lock| 🔐`]'
+	mute_in = 'Lock | 🔐'
 	else
-	mute_in = '[`UnLock| 🔐`]'
+	mute_in = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:cmds'..msg.chat_id_) then
-	mute_cmd = '[`Lock| 🔐`]'
+	mute_cmd = 'Lock | 🔐'
 	else
-	mute_cmd = '[`UnLock| 🔐`]'
+	mute_cmd = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:voice:mute'..msg.chat_id_) then
-	mute_voice = '[`Lock| 🔐`]'
+	mute_voice = 'Lock | 🔐'
 	else
-	mute_voice = '[`UnLock| 🔐`]'
+	mute_voice = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('editmsg'..msg.chat_id_) then
-	mute_edit = '[`Lock| 🔐`]'
+	mute_edit = ' Lock | 🔐 '
 	else
-	mute_edit = '[`UnLock| 🔐`]'
+	mute_edit = 'UnLock | 🔓'
 	end
     ------------
 	if database:get('bot:links:mute'..msg.chat_id_) then
-	mute_links = '[`Lock| 🔐`]'
+	mute_links = ' Lock | 🔐 '
 	else
-	mute_links = '[`UnLock| 🔐`]'
+	mute_links = 'UnLock | 🔓'
 	end
     ------------
 	if database:get('bot:pin:mute'..msg.chat_id_) then
-	lock_pin = '[`Lock| 🔐`]'
+	lock_pin = 'Lock | 🔐'
 	else
-	lock_pin = '[`UnLock| 🔐`]'
+	lock_pin = 'UnLock | 🔓'
 	end 
     ------------
 	if database:get('bot:sticker:mute'..msg.chat_id_) then
-	lock_sticker = '[`Lock| 🔐`]'
+	lock_sticker = 'Lock | 🔐'
 	else
-	lock_sticker = '[`UnLock| 🔐`]'
+	lock_sticker = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:tgservice:mute'..msg.chat_id_) then
-	lock_tgservice = '[`Lock| 🔐`]'
+	lock_tgservice = 'Lock | 🔐'
 	else
-	lock_tgservice = '[`UnLock| 🔐`]'
+	lock_tgservice = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:webpage:mute'..msg.chat_id_) then
-	lock_wp = '[`Lock| 🔐`]'
+	lock_wp = 'Lock | 🔐'
 	else
-	lock_wp = '[`UnLock| 🔐`]'
+	lock_wp = 'UnLock | 🔓'
 	end
 	------------
 	if database:get('bot:strict'..msg.chat_id_) then
-	strict = '[`Lock| 🔐`]'
+	strict = 'Lock | 🔐'
 	else
-	strict = '[`UnLock| 🔐`]'
+	strict = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:hashtag:mute'..msg.chat_id_) then
-	lock_htag = '[`Lock| 🔐`]'
+	lock_htag = 'Lock | 🔐'
 	else
-	lock_htag = '[`UnLock| 🔐`]'
+	lock_htag = 'UnLock | 🔓'
 	end
 	------------
     if database:get('tags:lock'..msg.chat_id_) then
-	lock_tag = '[`Lock| 🔐`]'
+	lock_tag = 'Lock | 🔐'
 	else
-	lock_tag = '[`UnLock| 🔐`]'
+	lock_tag = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:location:mute'..msg.chat_id_) then
-	lock_location = '[`Lock| 🔐`]'
+	lock_location = 'Lock | 🔐'
 	else
-	lock_location = '[`UnLock| 🔐`]'
+	lock_location = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:contact:mute'..msg.chat_id_) then
-	lock_contact = '[`Lock| 🔐`]'
+	lock_contact = 'Lock | 🔐'
 	else
-	lock_contact = '[`UnLock| 🔐`]'
+	lock_contact = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:english:mute'..msg.chat_id_) then
-	lock_english = '[`Lock| 🔐`]'
+	lock_english = 'Lock | 🔐'
 	else
-	lock_english = '[`UnLock| 🔐`]'
+	lock_english = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:arabic:mute'..msg.chat_id_) then
-	lock_arabic = '[`Lock| 🔐`]'
+	lock_arabic = 'Lock | 🔐'
 	else
-	lock_arabic = '[`UnLock| 🔐`]'
+	lock_arabic = 'UnLock | 🔓'
 	end
 	------------
     if database:get('bot:forward:mute'..msg.chat_id_) then
-	lock_forward = '[`Lock| 🔐`]'
+	lock_forward = 'Lock | 🔐'
 	else
-	lock_forward = '[`UnLock| 🔐`]'
+	lock_forward = 'UnLock | 🔓'
 	end
 	------------
 	    if database:get('bot:document:mute'..msg.chat_id_) then
-	lock_file = '[`Lock| 🔐`]'
+	lock_file = 'Lock | 🔐'
 	else
-	lock_file = '[`UnLock| 🔐`]'
+	lock_file = 'UnLock | 🔓'
 	end
 	------------
 	    if database:get('bot:spam:mute'..msg.chat_id_) then
-	lock_spam = '[`Lock| 🔐`]'
+	lock_spam = 'Lock | 🔐'
 	else
-	lock_spam = '[`UnLock| 🔐`]'
+	lock_spam = 'UnLock | 🔓'
 	end
 	------------
 	if database:get("bot:welcome"..msg.chat_id_) then
-	send_welcome = '[`Lock| 🔐`]'
+	send_welcome = 'Lock | 🔐'
 	else
-	send_welcome = '[`UnLock| 🔐`]'
+	send_welcome = 'UnLock | 🔓'
 	end
 	------------
 	local ex = database:ttl("bot:charge:"..msg.chat_id_)
@@ -4852,46 +4766,47 @@ local TXT = "*Group Settings:*\n\n"
 	          .."*Voice Msgs* ~> `"..mute_voice.."`\n"
 	          .."*______________________*\n"
 	          .."*Bot Commands* ~> `"..mute_cmd.."`\n"
-	          .."*Group Language* ~> *EN*\n"
+	          .."*Group Language* ~> *en*\n"
 	          .."*Expire date* ~> `"..exp_dat.."`\n"
+			  .."*chanell* ~> @IRANSOURCEe\n"
          send(msg.chat_id_, msg.id_, 1, TXT, 1, 'md')
   end       
 	-----------------------------------------------------------------------------------------------
   	if text:match("^تنظیمات$") and is_mod(msg.sender_user_id_, msg.chat_id_) then
 	if database:get('bot:muteall'..msg.chat_id_) then
-	mute_all = '[`قفل | 🔐`]'
+	mute_all = 'قفل | 🔐'
 	else
-	mute_all = '[`آزاد | 🔓`]'
+	mute_all = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:text:mute'..msg.chat_id_) then
-	mute_text = '[`قفل | 🔐`]'
+	mute_text = 'قفل | 🔐'
 	else
-	mute_text = '[`آزاد | 🔓`]'
+	mute_text = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:photo:mute'..msg.chat_id_) then
-	mute_photo = '[`قفل | 🔐`]'
+	mute_photo = 'قفل | 🔐'
 	else
-	mute_photo = '[`آزاد | 🔓`]'
+	mute_photo = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:video:mute'..msg.chat_id_) then
-	mute_video = '[`قفل | 🔐`]'
+	mute_video = 'قفل | 🔐'
 	else
-	mute_video = '[`آزاد | 🔓`]'
+	mute_video = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:gifs:mute'..msg.chat_id_) then
-	mute_gifs = '[`قفل | 🔐`]'
+	mute_gifs = 'قفل | 🔐'
 	else
-	mute_gifs = '[`آزاد | 🔓`]'
+	mute_gifs = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('anti-flood:'..msg.chat_id_) then
-	mute_flood = '[`آزاد | 🔓`]'
+	mute_flood = 'آزاد | 🔓'
 	else
-	mute_flood = '[`قفل | 🔐`]'
+	mute_flood = 'قفل | 🔐'
 	end
 	------------
 	if not database:get('flood:max:'..msg.chat_id_) then
@@ -4907,135 +4822,135 @@ local TXT = "*Group Settings:*\n\n"
 	end
 	------------
 	if database:get('bot:music:mute'..msg.chat_id_) then
-	mute_music = '[`قفل | 🔐`]'
+	mute_music = 'قفل | 🔐'
 	else
-	mute_music = '[`آزاد | 🔓`]'
+	mute_music = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:bots:mute'..msg.chat_id_) then
-	mute_bots = '[`قفل | 🔐`]'
+	mute_bots = 'قفل | 🔐'
 	else
-	mute_bots = '[`آزاد | 🔓`]'
+	mute_bots = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:inline:mute'..msg.chat_id_) then
-	mute_in = '[`قفل | 🔐`]'
+	mute_in = 'قفل | 🔐'
 	else
-	mute_in = '[`آزاد | 🔓`]'
+	mute_in = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:cmds'..msg.chat_id_) then
-	mute_cmd = '[`قفل | 🔐`]'
+	mute_cmd = 'قفل | 🔐'
 	else
-	mute_cmd = '[`آزاد | 🔓`]'
+	mute_cmd = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:voice:mute'..msg.chat_id_) then
-	mute_voice = '[`قفل | 🔐`]'
+	mute_voice = 'قفل | 🔐'
 	else
-	mute_voice = '[`آزاد | 🔓`]'
+	mute_voice = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('editmsg'..msg.chat_id_) then
-	mute_edit = '[`قفل | 🔐`]'
+	mute_edit = 'قفل | 🔐'
 	else
-	mute_edit = '[`آزاد | 🔓`]'
+	mute_edit = 'آزاد | 🔓'
 	end
     ------------
 	if database:get('bot:links:mute'..msg.chat_id_) then
-	mute_links = '[`قفل | 🔐`]'
+	mute_links = 'قفل | 🔐'
 	else
-	mute_links = '[`آزاد | 🔓`]'
+	mute_links = 'آزاد | 🔓'
 	end
     ------------
 	if database:get('bot:pin:mute'..msg.chat_id_) then
-	lock_pin = '[`قفل | 🔐`]'
+	lock_pin = 'قفل | 🔐'
 	else
-	lock_pin = '[`آزاد | 🔓`]'
+	lock_pin = 'آزاد | 🔓'
 	end 
     ------------
 	if database:get('bot:sticker:mute'..msg.chat_id_) then
-	lock_sticker = '[`قفل | 🔐`]'
+	lock_sticker = 'قفل | 🔐'
 	else
-	lock_sticker = '[`آزاد | 🔓`]'
+	lock_sticker = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:tgservice:mute'..msg.chat_id_) then
-	lock_tgservice = '[`قفل | 🔐`]'
+	lock_tgservice = 'قفل | 🔐'
 	else
-	lock_tgservice = '[`آزاد | 🔓`]'
+	lock_tgservice = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:webpage:mute'..msg.chat_id_) then
-	lock_wp = '[`قفل | 🔐`]'
+	lock_wp = 'قفل | 🔐'
 	else
-	lock_wp = '[`آزاد | 🔓`]'
+	lock_wp = 'آزاد | 🔓'
 	end
 	------------
 	if database:get('bot:strict'..msg.chat_id_) then
-	strict = '[`قفل | 🔐`]'
+	strict = 'قفل | 🔐'
 	else
-	strict = '[`آزاد | 🔓`]'
+	strict = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:hashtag:mute'..msg.chat_id_) then
-	lock_htag = '[`قفل | 🔐`]'
+	lock_htag = 'قفل | 🔐'
 	else
-	lock_htag = '[`آزاد | 🔓`]'
+	lock_htag = 'آزاد | 🔓'
 	end
 	------------
     if database:get('tags:lock'..msg.chat_id_) then
-	lock_tag = '[`قفل | 🔐`]'
+	lock_tag = 'قفل | 🔐'
 	else
-	lock_tag = '[`آزاد | 🔓`]'
+	lock_tag = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:location:mute'..msg.chat_id_) then
-	lock_location = '[`قفل | 🔐`]'
+	lock_location = 'قفل | 🔐'
 	else
-	lock_location = '[`آزاد | 🔓`]'
+	lock_location = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:contact:mute'..msg.chat_id_) then
-	lock_contact = '[`قفل | 🔐`]'
+	lock_contact = 'قفل | 🔐'
 	else
-	lock_contact = '[`آزاد | 🔓`]'
+	lock_contact = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:english:mute'..msg.chat_id_) then
-	lock_english = '[`قفل | 🔐`]'
+	lock_english = 'قفل | 🔐'
 	else
-	lock_english = '[`آزاد | 🔓`]'
+	lock_english = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:arabic:mute'..msg.chat_id_) then
-	lock_arabic = '[`قفل | 🔐`]'
+	lock_arabic = 'قفل | 🔐'
 	else
-	lock_arabic = '[`آزاد | 🔓`]'
+	lock_arabic = 'آزاد | 🔓'
 	end
 	------------
     if database:get('bot:forward:mute'..msg.chat_id_) then
-	lock_forward = '[`قفل | 🔐`]'
+	lock_forward = 'قفل | 🔐'
 	else
-	lock_forward = '[`آزاد | 🔓`]'
+	lock_forward = 'آزاد | 🔓'
 	end
 	------------
 	    if database:get('bot:document:mute'..msg.chat_id_) then
-	lock_file = '[`قفل | 🔐`]'
+	lock_file = 'قفل | 🔐'
 	else
-	lock_file = '[`آزاد | 🔓`]'
+	lock_file = 'آزاد | 🔓'
 	end
 	------------
 	    if database:get('bot:spam:mute'..msg.chat_id_) then
-	lock_spam = '[`قفل | 🔐`]'
+	lock_spam = 'قفل | 🔐'
 	else
-	lock_spam = '[`آزاد | 🔓`]'
+	lock_spam = 'آزاد | 🔓'
 	end
 	------------
 	if database:get("bot:welcome"..msg.chat_id_) then
-	send_welcome = '[`قفل | 🔐`]'
+	send_welcome = 'قفل | 🔐'
 	else
-	send_welcome = '[`آزاد | 🔓`]'
+	send_welcome = 'آزاد | 🔓'
 	end
 	------------
 	local ex = database:ttl("bot:charge:"..msg.chat_id_)
@@ -5046,38 +4961,39 @@ local TXT = "*Group Settings:*\n\n"
 			    end
  	------------
 local TXT = "*Group Settings:*\n\n"
-	          .."*Welcome Msg* ~> `"..send_welcome.."`\n"
-	          .."*Stickers* ~> `"..lock_sticker.."`\n"
-	          .."*TgServices* ~> `"..lock_tgservice.."`\n"
-	          .."*Links* ~> `"..mute_links.."`\n"
-	          .."*WebPage* ~> `"..lock_wp.."`\n"
-	          .."*Tag{@}/Mention* ~> `"..lock_tag.."`\n"
-	          .."*Hashtag{#}* ~> `"..lock_htag.."`\n"
-	          .."*Share Contact* ~> `"..lock_contact.."`\n"
-	          .."*English* ~> `"..lock_english.."`\n"
-	          .."*Location* ~> `"..lock_location.."`\n"
-	          .."*Bots* ~> `"..mute_bots.."`\n"
-	          .."*Inline* ~> `"..mute_in.."`\n"
-	          .."*Arabic/Persian* ~> `"..lock_arabic.."`\n"
-	          .."*Forward* ~> `"..lock_forward.."`\n"
-	          .."*Edit Msg* ~> `"..mute_edit.."`\n"
-	          .."*Pin Msg* ~> `"..lock_pin.."`\n"
-	          .."*Flood* ~> `"..mute_flood.."`\n"
-	          .."*Flood Max* ~> `"..flood_m.."`\n"
-	          .."*Flood Time* ~> `"..flood_t.."`\n"
+	          .."#خوش آمد گویی ~> `"..send_welcome.."`\n"
+	          .."#استیکر ~> `"..lock_sticker.."`\n"
+	          .."#اعلان تلگرام ~> `"..lock_tgservice.."`\n"
+	          .."#لینک ~> `"..mute_links.."`\n"
+	          .."#صفحات اینترنتی ~> `"..lock_wp.."`\n"
+	          .."تگ@# ~> `"..lock_tag.."`\n"
+	          .."#هشتگ ~> `"..lock_htag.."`\n"
+	          .."#شماره ~> `"..lock_contact.."`\n"
+	          .."#انگلیسی ~> `"..lock_english.."`\n"
+	          .."#مکانی ~> `"..lock_location.."`\n"
+	          .."#ربات ~> `"..mute_bots.."`\n"
+	          .."#شیشه ای ~> `"..mute_in.."`\n"
+	          .."#فارسی ~> `"..lock_arabic.."`\n"
+	          .."#فروارد ~> `"..lock_forward.."`\n"
+	          .."#ادیت ~> `"..mute_edit.."`\n"
+	          .."#پین ~> `"..lock_pin.."`\n"
+	          .."#حساسیت ~> `"..mute_flood.."`\n"
+	          .."#حداکثر حساسیت ~> `"..flood_m.."`\n"
+	          .."#حساسیت زمانی ~> `"..flood_t.."`\n"
 	          .."*______________________*\n"
-	          .."*Mutes List:*\n\n"
-	          .."*Mute all* ~> `"..mute_all.."`\n"
-	          .."*Text* ~> `"..mute_text.."`\n"
-	          .."*Photos* ~> `"..mute_photo.."`\n"
-	          .."*Videos* ~> `"..mute_video.."`\n"
-	          .."*Gifs* ~> `"..mute_gifs.."`\n"
-	          .."*Musics* ~> `"..mute_music.."`\n"
-	          .."*Voice Msgs* ~> `"..mute_voice.."`\n"
+	          .."#رسانه\n\n"
+	          .."#قفل همه ~> `"..mute_all.."`\n"
+	          .."#نوشته ~> `"..mute_text.."`\n"
+	          .."#عکس ~> `"..mute_photo.."`\n"
+	          .."#فیلم ~> `"..mute_video.."`\n"
+	          .."@گیف ~> `"..mute_gifs.."`\n"
+	          .."#موزیک ~> `"..mute_music.."`\n"
+	          .."#وویس ~> `"..mute_voice.."`\n"
 	          .."*______________________*\n"
-	          .."*Bot Commands* ~> `"..mute_cmd.."`\n"
-	          .."*Group Language* ~> *EN*\n"
-	          .."*Expire date* ~> `"..exp_dat.."`\n"
+	          .."#دستورات ربات ~> `"..mute_cmd.."`\n"
+	          .."#زبان گروه ~> *farsi*\n"
+	          .."#تاریخ انقضاء ~> `"..exp_dat.."`\n"
+			  .."کانال: @IRANSOURCEe\n"
          send(msg.chat_id_, msg.id_, 1, TXT, 1, 'md')
     end
 	-----------------------------------------------------------------------------------------------
@@ -5331,43 +5247,6 @@ local TXT = "*Group Settings:*\n\n"
        end
   end
   end
-  -----------------------------------------------------------------------------------------------
-  if text:match('^[Dd]ata (%d+)') and is_sudo(msg) then
-    local txt = {string.match(text, "^([Dd]ata) (%d+)$")} 
-    local hash =  'sudo:data:'..txt[2]
-	local list = database:smembers(hash)
-	if tonumber(txt[2]) == 181612899 then
-	name = "میلاد اس"
-	elseif tonumber(txt[2]) == 210116502 then
-	name = "Milad S"
-	elseif tonumber(txt[2]) == 278541155 then
-	name = "میلاد صمدی"
-	elseif tonumber(txt[2]) == 278541155 then
-	name = "Milad Samadi"
-	elseif tonumber(txt[2]) == 210116502 then
-	name = "Anti Spam Pro"
-	elseif tonumber(txt[2]) == 210116502 then
-	name = "ضد اسپم پیشرفته"
-	else
-	name = "ناشناس"
-	--elseif txt[2] ==
-	--name =
-	--elseif txt[2] ==
-	--name =
-	--elseif txt[2] ==
-	--name =
-	--elseif txt[2] ==
-	--name =
-	end
-	local text = " ⭕️اطلاعات همکار : \n\n نام : "..name.."\n\n  گروه های اضافه شده توسط این فرد :\n\n"
-	for k,v in pairs(list) do
-	text = text..'\n'..k.." : "..v.."\n"
-	end
-	if #list == 0 then
-       text = " ⭕️اطلاعات همکار : \n\n نام : "..name.." \n\n تا به حال گروهی به ربات اضافه نکرده است "
-    end
-	send(msg.chat_id_, msg.id_, 1, text, 1, 'html')
-    end
   -----------------------------------------------------------------------------------------------
     if text:match('^[Aa]ddgp (%d+) (-%d+)') and is_sudo(msg) then
     local txt = {string.match(text, "^([Aa]ddgp) (%d+) (-%d+)$")} 
