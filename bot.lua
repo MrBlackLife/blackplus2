@@ -4859,39 +4859,39 @@ local TXT = "*Group Settings:*\n\n"
 	-----------------------------------------------------------------------------------------------
   	if text:match("^تنظیمات$") and is_mod(msg.sender_user_id_, msg.chat_id_) then
 	if database:get('bot:muteall'..msg.chat_id_) then
-	mute_all = '[قفل | 🔐]'
+	mute_all = '[`قفل | 🔐`]'
 	else
-	mute_all = '[آزاد | 🔓]'
+	mute_all = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:text:mute'..msg.chat_id_) then
-	mute_text = '[قفل | 🔐]'
+	mute_text = '[`قفل | 🔐`]'
 	else
-	mute_text = '[آزاد | 🔓]'
+	mute_text = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:photo:mute'..msg.chat_id_) then
-	mute_photo = '[قفل | 🔐]'
+	mute_photo = '[`قفل | 🔐`]'
 	else
-	mute_photo = '[آزاد | 🔓]'
+	mute_photo = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:video:mute'..msg.chat_id_) then
-	mute_video = '[قفل | 🔐]'
+	mute_video = '[`قفل | 🔐`]'
 	else
-	mute_video = '[آزاد | 🔓]'
+	mute_video = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:gifs:mute'..msg.chat_id_) then
-	mute_gifs = '[قفل | 🔐]'
+	mute_gifs = '[`قفل | 🔐`]'
 	else
-	mute_gifs = '[آزاد | 🔓]'
+	mute_gifs = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('anti-flood:'..msg.chat_id_) then
-	mute_flood = '[آزاد | 🔓]'
+	mute_flood = '[`آزاد | 🔓`]'
 	else
-	mute_flood = '[قفل | 🔐]'
+	mute_flood = '[`قفل | 🔐`]'
 	end
 	------------
 	if not database:get('flood:max:'..msg.chat_id_) then
@@ -4907,135 +4907,135 @@ local TXT = "*Group Settings:*\n\n"
 	end
 	------------
 	if database:get('bot:music:mute'..msg.chat_id_) then
-	mute_music = '[قفل | 🔐]'
+	mute_music = '[`قفل | 🔐`]'
 	else
-	mute_music = '[آزاد | 🔓]'
+	mute_music = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:bots:mute'..msg.chat_id_) then
-	mute_bots = '[قفل | 🔐]'
+	mute_bots = '[`قفل | 🔐`]'
 	else
-	mute_bots = '[آزاد | 🔓]'
+	mute_bots = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:inline:mute'..msg.chat_id_) then
-	mute_in = '[قفل | 🔐]'
+	mute_in = '[`قفل | 🔐`]'
 	else
-	mute_in = '[آزاد | 🔓]'
+	mute_in = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:cmds'..msg.chat_id_) then
-	mute_cmd = '[قفل | 🔐]'
+	mute_cmd = '[`قفل | 🔐`]'
 	else
-	mute_cmd = '[آزاد | 🔓]'
+	mute_cmd = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:voice:mute'..msg.chat_id_) then
-	mute_voice = '[قفل | 🔐]'
+	mute_voice = '[`قفل | 🔐`]'
 	else
-	mute_voice = '[آزاد | 🔓]'
+	mute_voice = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('editmsg'..msg.chat_id_) then
-	mute_edit = '[قفل | 🔐]'
+	mute_edit = '[`قفل | 🔐`]'
 	else
-	mute_edit = '[آزاد | 🔓]'
+	mute_edit = '[`آزاد | 🔓`]'
 	end
     ------------
 	if database:get('bot:links:mute'..msg.chat_id_) then
-	mute_links = '[قفل | 🔐]'
+	mute_links = '[`قفل | 🔐`]'
 	else
-	mute_links = '[آزاد | 🔓]'
+	mute_links = '[`آزاد | 🔓`]'
 	end
     ------------
 	if database:get('bot:pin:mute'..msg.chat_id_) then
-	lock_pin = '[قفل | 🔐]'
+	lock_pin = '[`قفل | 🔐`]'
 	else
-	lock_pin = '[آزاد | 🔓]'
+	lock_pin = '[`آزاد | 🔓`]'
 	end 
     ------------
 	if database:get('bot:sticker:mute'..msg.chat_id_) then
-	lock_sticker = '[قفل | 🔐]'
+	lock_sticker = '[`قفل | 🔐`]'
 	else
-	lock_sticker = '[آزاد | 🔓]'
+	lock_sticker = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:tgservice:mute'..msg.chat_id_) then
-	lock_tgservice = '[قفل | 🔐]'
+	lock_tgservice = '[`قفل | 🔐`]'
 	else
-	lock_tgservice = '[آزاد | 🔓]'
+	lock_tgservice = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:webpage:mute'..msg.chat_id_) then
-	lock_wp = '[قفل | 🔐]'
+	lock_wp = '[`قفل | 🔐`]'
 	else
-	lock_wp = '[آزاد | 🔓]'
+	lock_wp = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get('bot:strict'..msg.chat_id_) then
-	strict = '[قفل | 🔐]'
+	strict = '[`قفل | 🔐`]'
 	else
-	strict = '[آزاد | 🔓]'
+	strict = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:hashtag:mute'..msg.chat_id_) then
-	lock_htag = '[قفل | 🔐]'
+	lock_htag = '[`قفل | 🔐`]'
 	else
-	lock_htag = '[آزاد | 🔓]'
+	lock_htag = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('tags:lock'..msg.chat_id_) then
-	lock_tag = '[قفل | 🔐]'
+	lock_tag = '[`قفل | 🔐`]'
 	else
-	lock_tag = '[آزاد | 🔓]'
+	lock_tag = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:location:mute'..msg.chat_id_) then
-	lock_location = '[قفل | 🔐]'
+	lock_location = '[`قفل | 🔐`]'
 	else
-	lock_location = '[آزاد | 🔓]'
+	lock_location = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:contact:mute'..msg.chat_id_) then
-	lock_contact = '[قفل | 🔐]'
+	lock_contact = '[`قفل | 🔐`]'
 	else
-	lock_contact = '[آزاد | 🔓]'
+	lock_contact = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:english:mute'..msg.chat_id_) then
-	lock_english = '[قفل | 🔐]'
+	lock_english = '[`قفل | 🔐`]'
 	else
-	lock_english = '[آزاد | 🔓]'
+	lock_english = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:arabic:mute'..msg.chat_id_) then
-	lock_arabic = '[قفل | 🔐]'
+	lock_arabic = '[`قفل | 🔐`]'
 	else
-	lock_arabic = '[آزاد | 🔓]'
+	lock_arabic = '[`آزاد | 🔓`]'
 	end
 	------------
     if database:get('bot:forward:mute'..msg.chat_id_) then
-	lock_forward = '[قفل | 🔐]'
+	lock_forward = '[`قفل | 🔐`]'
 	else
-	lock_forward = '[آزاد | 🔓]'
+	lock_forward = '[`آزاد | 🔓`]'
 	end
 	------------
 	    if database:get('bot:document:mute'..msg.chat_id_) then
-	lock_file = '[قفل | 🔐]'
+	lock_file = '[`قفل | 🔐`]'
 	else
-	lock_file = '[آزاد | 🔓]'
+	lock_file = '[`آزاد | 🔓`]'
 	end
 	------------
 	    if database:get('bot:spam:mute'..msg.chat_id_) then
-	lock_spam = '[قفل | 🔐]'
+	lock_spam = '[`قفل | 🔐`]'
 	else
-	lock_spam = '[آزاد | 🔓]'
+	lock_spam = '[`آزاد | 🔓`]'
 	end
 	------------
 	if database:get("bot:welcome"..msg.chat_id_) then
-	send_welcome = '[قفل | 🔐]'
+	send_welcome = '[`قفل | 🔐`]'
 	else
-	send_welcome = '[آزاد | 🔓]'
+	send_welcome = '[`آزاد | 🔓`]'
 	end
 	------------
 	local ex = database:ttl("bot:charge:"..msg.chat_id_)
